@@ -1,2 +1,2 @@
 # girl-installer
-Installs and compiles Gnome Internet Radio Locator with prerequisites on Debian-based distributions.
+Fetched, compiles and installs Gnome Internet Radio Locator with prerequisites on Debian-based distributions.
