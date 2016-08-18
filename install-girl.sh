@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 set -e
 if ! hash apt-get 2>/dev/null; then
         echo "This script requires a Debian based distribution."
