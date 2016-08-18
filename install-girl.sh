@@ -12,6 +12,7 @@ fi
 # update repositories
 apt-get -y update
 # install build basics.
+# testing content of build-essentials. Remarrked line below is complete list of speecific dependencies.
 # apt-get -y install pkg-config gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper audacious
 apt-get -y install build-essentials streamripper audacious
 # get GIRL source, unzip and configure
