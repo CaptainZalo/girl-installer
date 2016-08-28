@@ -17,9 +17,9 @@ apt-get -y update
 apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper
 # Get GIRL 9.5.0 source tarball, unzip and configure.
 cd /tmp
-wget https://download.gnome.org/sources/girl/9.5/girl-9.5.0.tar.xz
-tar Jxvf girl-9.5.0.tar.xz
-cd girl-9.5.0
+wget https://download.gnome.org/sources/girl/9.5/girl-9.5.1.tar.xz
+tar Jxvf girl-9.5.1.tar.xz
+cd girl-9.5.1
 ./configure
 # Compile with Totem as default player.
 make 
