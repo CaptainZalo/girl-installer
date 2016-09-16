@@ -12,9 +12,9 @@ if [ "$(id -u)" -ne "0" ]; then
         exit 1
 fi
 # Update repositories.
-apt-get -y update
+sudo apt-get -y update
 # Install build dependencies.
-apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper
+sudo apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper
 # Get GIRL 9.5.0 source tarball, unzip and configure.
 cd /tmp
 wget http://current.girl.software/ -O girl.tar.xz
@@ -25,4 +25,4 @@ cd girl-*
 make 
 # Compile wih preferred player. Replace <program name> with preferred audio-player. Personal preferences.
 # make -e GIRL_HELPER_PLAYER=/usr/bin/<program name>
-make install
+sudo make install
