@@ -28,4 +28,4 @@ cd /tmp/girl-*
 make -e GIRL_HELPER_PLAYER=/usr/bin/audacity
 sudo make install
 # Clean /tmp/ for girl residue. (Thanks Iker)
-rm -r /tmp/girl-*
+sudo rm -rf /tmp/girl-*
