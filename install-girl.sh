@@ -15,8 +15,7 @@ fi
 sudo apt-get -y update
 # Install build dependencies.
 sudo apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper audacity
-# Clean /tmp/ for girl residue. (Thanks Iker)
-rm -r /tmp/girl*
+# Control will enter here if $DIRECTORY exists.
 # Get GIRL 9.5.2 source tarball, unzip and configure.
 wget http://download.gnome.org/sources/girl/9.5/girl-9.5.2.tar.xz -O /tmp/girl.tar.xz
 tar Jxvf /tmp/girl*
@@ -27,3 +26,5 @@ cd /tmp/girl-*
 # Compile wih Audacity. Replace audacity with preferred audio-player. Personal preferences apply.
 make -e GIRL_HELPER_PLAYER=/usr/bin/audacity
 sudo make install
+# Clean /tmp/ for girl residue. (Thanks Iker)
+rm -r /tmp/girl-*
