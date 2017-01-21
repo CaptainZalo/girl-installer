@@ -14,7 +14,7 @@ fi
 # Update repositories.
 sudo apt-get -y update
 # Install build dependencies.
-sudo apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper audacity
+sudo apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper audacious
 # Control will enter here if $DIRECTORY exists.
 # Get GIRL 9.5.2 source tarball, unzip and configure.
 cd /tmp/
@@ -25,7 +25,7 @@ cd /tmp/girl-*
 # Compile with Totem as default player:
 # make
 # Compile wih Audacity. Replace audacity with preferred audio-player. Personal preferences apply.
-make -e GIRL_HELPER_PLAYER=/usr/bin/audacity
+make -e GIRL_HELPER_PLAYER=/usr/bin/audacious
 sudo make install
 # Clean /tmp/ for girl residue. (Thanks Iker)
 sudo rm -rf /tmp/girl-*
