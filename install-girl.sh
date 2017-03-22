@@ -1,6 +1,7 @@
 #!/bin/bash
-# Installer script v0.1. Intended for Debian ARM-based SoC-distribution and GIRL v9.5.0. http://girl.software
-# Check if Synaptic packagemanager is installed.
+echo "Installer script v0.2. Intended for Debian ARM-based SoC-distribution, but will work on most Debian distros."
+echo "Script installs Gnome Internet Radio Locator > v9.9.0. by Ole Aamot. http://girl.software"
+echo "Check if Synaptic packagemanager is installed..."
 set -e
 if ! hash apt-get 2>/dev/null; then
         echo "Sorry. This script requires a distribution with Synaptic package manager (Debian distributions)."
@@ -11,21 +12,13 @@ if [ "$(id -u)" -ne "0" ]; then
         echo "This script requires root."
         exit 1
 fi
-# Update repositories.
+echo "Update repositories..."
 sudo apt-get -y update
-# Install build dependencies.
-sudo apt-get -y install pkg-config gcc gtk+-2.0 glib-2.0 libgnome-2.0 libgnomeui-dev intltool itstool streamripper audacious
+echo "Install build dependencies..."
+sudo apt-get install -y build-essential yelp-tools libchamplain-gtk-0.12-dev debhelper libgtk-3-0 gtk+-2.0 glib-2.0 libgnome-2.0 itstool libpango-1.0-0 libchamplain-gtk-0.12-0 gtk-doc-tools libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good streamer1.0-plugins-bad libgnomevfs2-dev libgnomeui-dev intltool pkg-config libgtk2.0-dev libgnome2-dev libxml2-dev streamripper
 # Control will enter here if $DIRECTORY exists.
-# Get GIRL 9.5.2 source tarball, unzip and configure.
-cd /tmp/
-wget http://download.gnome.org/sources/girl/9.5/girl-9.5.2.tar.xz -O /tmp/girl.tar.xz
-tar Jxvf /tmp/girl*
-cd /tmp/girl-*
-./configure
-# Compile with Totem as default player:
-# make
-# Compile wih Audacity. Replace audacity with preferred audio-player. Personal preferences apply.
-make -e GIRL_HELPER_PLAYER=/usr/bin/audacious
-sudo make install
-# Clean /tmp/ for girl residue. (Thanks Iker)
-sudo rm -rf /tmp/girl-*
+echo "Get latest GIRL source to user's context and enter directory..."
+cd ~ && git clone git://git.gnome.org/girl && cd girl
+echo "Build, make and install executable..."
+./autogen.sh && make && sudo make install && cd
+echo "Run program with command 'girl' and enjoy free Internet radio."
