@@ -15,7 +15,7 @@ fi
 echo "Update repositories..."
 sudo apt-get -y update
 echo "Install build dependencies..."
-sudo apt-get install -y build-essential yelp-tools libchamplain-gtk-0.12-dev debhelper libgtk-3-0 gtk+-2.0 glib-2.0 libgnome-2.0 itstool libpango-1.0-0 libchamplain-gtk-0.12-0 gtk-doc-tools libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good streamer1.0-plugins-bad libgnomevfs2-dev libgnomeui-dev intltool pkg-config libgtk2.0-dev libgnome2-dev libxml2-dev streamripper
+sudo apt-get install -y build-essential yelp-tools libchamplain-gtk-0.12-dev debhelper libgtk-3-0 gtk+-2.0 glib-2.0 libgnome2-0 itstool libpango-1.0-0 libchamplain-gtk-0.12-0 gtk-doc-tools libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good streamer1.0-plugins-bad libgnomevfs2-dev libgnomeui-dev intltool pkg-config libgtk2.0-dev libgnome2-dev libxml2-dev streamripper
 # Control will enter here if $DIRECTORY exists.
 echo "Get latest GIRL source to user's context and enter directory..."
 cd ~ && git clone git://git.gnome.org/girl && cd girl
